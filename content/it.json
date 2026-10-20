@@ -1,15 +1,21 @@
 {
-  "seo": {
-    "titolo": "Annagiulia Loffi | Danza classica RAD e danza contemporanea",
-    "descrizione": "Annagiulia Loffi insegna danza classica con il metodo Royal Academy of Dance (RAD) e danza contemporanea a bambini, ragazzi e adulti. Scrivimi per i corsi."
-  },
-  "intestazione": {
-    "sottotitolo_nome": "Danza classica & contemporanea",
-    "menu_chi_sono": "Chi sono",
-    "menu_corsi": "Corsi",
-    "menu_metodo": "Metodo RAD",
-    "menu_prima_volta": "Prima volta?",
-    "menu_contatti": "Contatti"
+  "testimonianze": {
+    "sopratitolo": "Dicono di me",
+    "titolo": "Le parole di *allievi e famiglie*.",
+    "elenco": [
+      {
+        "testo": "[Testimonianza di un genitore: due o tre righe sull'esperienza della figlia o del figlio.]",
+        "autore": "[Nome], mamma di [Nome], [età] anni"
+      },
+      {
+        "testo": "[Testimonianza di un'allieva o di un allievo adulto.]",
+        "autore": "[Nome], corso adulti"
+      },
+      {
+        "testo": "[Una referenza da Londra: un tutor o una collega della Royal Academy of Dance.]",
+        "autore": "[Nome], [ruolo]"
+      }
+    ]
   },
   "apertura": {
     "sopratitolo": "Laureanda alla Royal Academy of Dance · Londra",
@@ -20,12 +26,21 @@
     "bollino_titolo": "RAD",
     "bollino_testo": "Laurea · 2027"
   },
-  "credenziali": [
-    { "titolo": "Laurea in corso", "testo": "Royal Academy of Dance, Londra · [Titolo del corso], conclusione a settembre 2027" },
-    { "titolo": "Certificazioni RAD", "testo": "Abilitata all'insegnamento del programma RAD" },
-    { "titolo": "Esami ufficiali", "testo": "Preparazione agli esami RAD con esaminatori internazionali" },
-    { "titolo": "Due linguaggi", "testo": "Danza classica e danza contemporanea" }
-  ],
+  "pie_di_pagina": {
+    "qualifica": "Insegnante di danza certificata RAD",
+    "etichetta_crediti": "Foto e video",
+    "etichetta_iva": "P. IVA",
+    "link_privacy": "Privacy",
+    "link_cookie": "Cookie"
+  },
+  "intestazione": {
+    "sottotitolo_nome": "Danza classica & contemporanea",
+    "menu_chi_sono": "Chi sono",
+    "menu_corsi": "Corsi",
+    "menu_metodo": "Metodo RAD",
+    "menu_prima_volta": "Prima volta?",
+    "menu_contatti": "Contatti"
+  },
   "chi_sono": {
     "sopratitolo": "Chi sono",
     "titolo": "Da Londra, con la passione di *trasmettere* la danza.",
@@ -35,16 +50,104 @@
     ],
     "citazione": "[Una tua frase sulla danza e sull'insegnamento.]"
   },
+  "credenziali": [
+    {
+      "titolo": "Laurea in corso",
+      "testo": "Royal Academy of Dance, Londra · BABE, conclusione a settembre 2027"
+    },
+    {
+      "titolo": "Certificazioni RAD",
+      "testo": "Abilitata all'insegnamento del programma RAD"
+    },
+    {
+      "titolo": "Esami ufficiali",
+      "testo": "Preparazione agli esami RAD con esaminatori internazionali"
+    },
+    {
+      "titolo": "Due linguaggi",
+      "testo": "Danza classica e danza contemporanea"
+    }
+  ],
+  "contatti": {
+    "pulsante_invio": "Invia richiesta",
+    "campo_nome": "Nome e cognome",
+    "campo_email": "Email",
+    "campo_corso": "Corso di interesse",
+    "titolo": "*Scrivimi*.",
+    "sopratitolo": "Contatti",
+    "opzioni_corso": [
+      "Propedeutica",
+      "Danza classica RAD",
+      "Danza contemporanea",
+      "Adulti",
+      "Lezioni private"
+    ],
+    "testo": "Raccontami chi sei, quanti anni hai (o ha tua figlia o tuo figlio) e se hai già studiato danza: ti risponderò per consigliarti il corso giusto.",
+    "campo_messaggio": "Messaggio",
+    "consenso_privacy": "Ho letto l'informativa privacy e acconsento al trattamento dei dati."
+  },
   "corsi": {
     "sopratitolo": "Corsi",
     "titolo": "Corsi di danza classica e contemporanea per ogni età.",
     "nota": "Classi a numero ridotto per seguire ogni allieva e ogni allievo con attenzione.",
     "elenco": [
-      { "nome": "Propedeutica", "per_chi": "Dai [4] ai [6] anni", "descrizione": "Il primo incontro con la danza: musica, coordinazione e immaginazione, con i programmi RAD dedicati ai più piccoli." },
-      { "nome": "Danza classica RAD", "per_chi": "Bambini e ragazzi", "descrizione": "Tecnica classica secondo il syllabus ufficiale, dai Grades ai livelli Vocational, con la possibilità di sostenere gli esami RAD." },
-      { "nome": "Danza contemporanea", "per_chi": "Ragazzi e adulti", "descrizione": "Lavoro a terra, peso, respiro e improvvisazione: un linguaggio libero per esplorare il movimento e la creatività." },
-      { "nome": "Adulti e lezioni private", "per_chi": "Tutti i livelli", "descrizione": "Classi per chi ricomincia o parte da zero, e lezioni individuali per preparare esami, audizioni o assoli." }
+      {
+        "nome": "Propedeutica",
+        "per_chi": "Dai [4] ai [6] anni",
+        "descrizione": "Il primo incontro con la danza: musica, coordinazione e immaginazione, con i programmi RAD dedicati ai più piccoli."
+      },
+      {
+        "nome": "Danza classica RAD",
+        "per_chi": "Bambini e ragazzi",
+        "descrizione": "Tecnica classica secondo il syllabus ufficiale, dai Grades ai livelli Vocational, con la possibilità di sostenere gli esami RAD."
+      },
+      {
+        "nome": "Danza contemporanea",
+        "per_chi": "Ragazzi e adulti",
+        "descrizione": "Lavoro a terra, peso, respiro e improvvisazione: un linguaggio libero per esplorare il movimento e la creatività."
+      },
+      {
+        "nome": "Adulti e lezioni private",
+        "per_chi": "Tutti i livelli",
+        "descrizione": "Classi per chi ricomincia o parte da zero, e lezioni individuali per preparare esami, audizioni o assoli."
+      }
     ]
+  },
+  "prima_volta": {
+    "sopratitolo": "Prima volta?",
+    "titolo": "Inizia *da qui*.",
+    "testo": "Le domande che mi fanno più spesso genitori e nuovi allievi. Non trovi la tua? Scrivimi, rispondo volentieri.",
+    "pulsante": "Fai una domanda",
+    "domande": [
+      {
+        "domanda": "Da che età si può iniziare?",
+        "risposta": "Con la propedeutica dai [4] anni; i Grades di danza classica RAD iniziano di solito verso i [6–7] anni. Non c'è un'età massima: ci sono corsi anche per adulti che partono da zero."
+      },
+      {
+        "domanda": "Cosa serve per la prima lezione?",
+        "risposta": "Abbigliamento comodo e aderente (body, oppure maglietta e leggings), calzini o scarpette da mezza punta se le hai già, capelli raccolti. Per la divisa ti consiglio io dopo la prima lezione."
+      },
+      {
+        "domanda": "Che cos'è il metodo RAD?",
+        "risposta": "È il programma di danza classica della Royal Academy of Dance, l'istituzione fondata a Londra nel 1920 che forma insegnanti e organizza esami in tutto il mondo. Procede per livelli, dai primi passi dei più piccoli fino ai livelli professionali, e sviluppa tecnica, musicalità ed espressività in modo graduale e sicuro."
+      },
+      {
+        "domanda": "Gli esami RAD sono obbligatori?",
+        "risposta": "No, sono facoltativi. Chi lo desidera li prepara durante l'anno: li valuta un esaminatore della Royal Academy of Dance e rilasciano un attestato riconosciuto a livello internazionale."
+      },
+      {
+        "domanda": "Classica o contemporanea: quale scegliere?",
+        "risposta": "Per i più giovani consiglio di partire dalla classica, che dà le basi tecniche, e di affiancare il contemporaneo per sviluppare libertà ed espressività. Gli adulti possono iniziare da entrambe."
+      },
+      {
+        "domanda": "Quanto costano i corsi?",
+        "risposta": "Corsi collettivi da [€ ...] al mese, lezioni private da [€ ...] l'ora. Sono previste riduzioni per [fratelli e sorelle / iscrizione annuale]."
+      }
+    ]
+  },
+  "seo": {
+    "titolo": "Annagiulia Loffi | Danza classica RAD e danza contemporanea",
+    "descrizione": "Annagiulia Loffi insegna danza classica con il metodo Royal Academy of Dance (RAD) e danza contemporanea a bambini, ragazzi e adulti. Scrivimi per i corsi."
   },
   "metodo": {
     "sopratitolo": "Il metodo RAD",
@@ -54,52 +157,26 @@
       "Gli esami, facoltativi, sono valutati da esaminatori RAD e certificano i progressi con un attestato riconosciuto in tutto il mondo."
     ],
     "livelli": [
-      { "etichetta": "Primi passi", "programma": "Pre-Primary · Primary", "descrizione": "Basi del movimento, ritmo e postura" },
-      { "etichetta": "Graded", "programma": "Grade 1 – Grade 8", "descrizione": "Tecnica classica, danze libere e di carattere" },
-      { "etichetta": "Vocational", "programma": "Intermediate Foundation → Advanced 2", "descrizione": "Per chi desidera approfondire o fare della danza una professione" },
-      { "etichetta": "E in più", "programma": "Contemporaneo", "descrizione": "Un secondo linguaggio per completare la formazione" }
+      {
+        "etichetta": "Primi passi",
+        "programma": "Pre-Primary · Primary",
+        "descrizione": "Basi del movimento, ritmo e postura"
+      },
+      {
+        "etichetta": "Graded",
+        "programma": "Grade 1 – Grade 8",
+        "descrizione": "Tecnica classica, danze libere e di carattere"
+      },
+      {
+        "etichetta": "Vocational",
+        "programma": "Intermediate Foundation → Advanced 2",
+        "descrizione": "Per chi desidera approfondire o fare della danza una professione"
+      },
+      {
+        "etichetta": "E in più",
+        "programma": "Contemporaneo",
+        "descrizione": "Un secondo linguaggio per completare la formazione"
+      }
     ]
-  },
-  "prima_volta": {
-    "sopratitolo": "Prima volta?",
-    "titolo": "Inizia *da qui*.",
-    "testo": "Le domande che mi fanno più spesso genitori e nuovi allievi. Non trovi la tua? Scrivimi, rispondo volentieri.",
-    "pulsante": "Fai una domanda",
-    "domande": [
-      { "domanda": "Da che età si può iniziare?", "risposta": "Con la propedeutica dai [4] anni; i Grades di danza classica RAD iniziano di solito verso i [6–7] anni. Non c'è un'età massima: ci sono corsi anche per adulti che partono da zero." },
-      { "domanda": "Cosa serve per la prima lezione?", "risposta": "Abbigliamento comodo e aderente (body, oppure maglietta e leggings), calzini o scarpette da mezza punta se le hai già, capelli raccolti. Per la divisa ti consiglio io dopo la prima lezione." },
-      { "domanda": "Che cos'è il metodo RAD?", "risposta": "È il programma di danza classica della Royal Academy of Dance, l'istituzione fondata a Londra nel 1920 che forma insegnanti e organizza esami in tutto il mondo. Procede per livelli, dai primi passi dei più piccoli fino ai livelli professionali, e sviluppa tecnica, musicalità ed espressività in modo graduale e sicuro." },
-      { "domanda": "Gli esami RAD sono obbligatori?", "risposta": "No, sono facoltativi. Chi lo desidera li prepara durante l'anno: li valuta un esaminatore della Royal Academy of Dance e rilasciano un attestato riconosciuto a livello internazionale." },
-      { "domanda": "Classica o contemporanea: quale scegliere?", "risposta": "Per i più giovani consiglio di partire dalla classica, che dà le basi tecniche, e di affiancare il contemporaneo per sviluppare libertà ed espressività. Gli adulti possono iniziare da entrambe." },
-      { "domanda": "Quanto costano i corsi?", "risposta": "Corsi collettivi da [€ ...] al mese, lezioni private da [€ ...] l'ora. Sono previste riduzioni per [fratelli e sorelle / iscrizione annuale]." }
-    ]
-  },
-  "testimonianze": {
-    "sopratitolo": "Dicono di me",
-    "titolo": "Le parole di *allievi e famiglie*.",
-    "elenco": [
-      { "testo": "[Testimonianza di un genitore: due o tre righe sull'esperienza della figlia o del figlio.]", "autore": "[Nome], mamma di [Nome], [età] anni" },
-      { "testo": "[Testimonianza di un'allieva o di un allievo adulto.]", "autore": "[Nome], corso adulti" },
-      { "testo": "[Una referenza da Londra: un tutor o una collega della Royal Academy of Dance.]", "autore": "[Nome], [ruolo]" }
-    ]
-  },
-  "contatti": {
-    "sopratitolo": "Contatti",
-    "titolo": "*Scrivimi*.",
-    "testo": "Raccontami chi sei, quanti anni hai (o ha tua figlia o tuo figlio) e se hai già studiato danza: ti risponderò per consigliarti il corso giusto.",
-    "campo_nome": "Nome e cognome",
-    "campo_email": "Email",
-    "campo_corso": "Corso di interesse",
-    "opzioni_corso": ["Propedeutica", "Danza classica RAD", "Danza contemporanea", "Adulti", "Lezioni private"],
-    "campo_messaggio": "Messaggio",
-    "consenso_privacy": "Ho letto l'informativa privacy e acconsento al trattamento dei dati.",
-    "pulsante_invio": "Invia richiesta"
-  },
-  "pie_di_pagina": {
-    "qualifica": "Insegnante di danza certificata RAD",
-    "etichetta_crediti": "Foto e video",
-    "etichetta_iva": "P. IVA",
-    "link_privacy": "Privacy",
-    "link_cookie": "Cookie"
   }
 }
