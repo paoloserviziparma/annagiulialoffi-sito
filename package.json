@@ -1,0 +1,7 @@
+{
+  "name": "annagiulialoffi-sito",
+  "private": true,
+  "description": "Sito di Annagiulia Loffi — danza classica e contemporanea",
+  "scripts": { "build": "node build.mjs" },
+  "engines": { "node": ">=18" }
+}

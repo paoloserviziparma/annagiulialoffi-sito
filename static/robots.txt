@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /grazie.html
+Disallow: /en/thanks.html
+
+Sitemap: https://annagiulialoffi.com/sitemap.xml

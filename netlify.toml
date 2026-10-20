@@ -1,0 +1,7 @@
+# Netlify: genera il sito da content/*.json a ogni modifica
+[build]
+  command = "node build.mjs"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"

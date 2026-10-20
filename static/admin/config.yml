@@ -1,0 +1,241 @@
+# Pannello di gestione (Decap CMS) — annagiulialoffi.com/admin
+# PRIMA DELL'USO: sostituisci NOME-UTENTE-GITHUB con il nome del tuo account GitHub.
+
+backend:
+  name: github
+  repo: paoloserviziparma/annagiulialoffi-sito
+  branch: main
+  base_url: https://api.netlify.com
+  commit_messages:
+    update: "Aggiorna {{collection}} “{{slug}}”"
+    uploadMedia: "Carica “{{path}}”"
+    deleteMedia: "Elimina “{{path}}”"
+
+locale: it
+site_url: https://annagiulialoffi.com
+display_url: https://annagiulialoffi.com
+logo_url: https://annagiulialoffi.com/favicon.svg
+
+media_folder: static/img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: sito
+    label: Sito
+    description: "Dopo ogni salvataggio il sito si aggiorna da solo in circa un minuto."
+    editor:
+      preview: false
+    files:
+
+      # ------------------------------------------------------------------
+      - name: impostazioni
+        label: "Foto, video e contatti"
+        file: content/impostazioni.json
+        format: json
+        fields:
+          - { label: "Nome", name: nome, widget: string }
+          - { label: "Email", name: email, widget: string, hint: "Compare nei contatti. Le richieste del modulo arrivano invece all'email impostata su Netlify." }
+          - { label: "Instagram", name: instagram, widget: string, required: false, hint: "Solo il nome del profilo, senza @. Se vuoto, il link non compare." }
+          - { label: "Partita IVA", name: partita_iva, widget: string, required: false }
+          - { label: "Crediti foto e video", name: crediti_foto, widget: string, required: false, hint: "Nome del fotografo, nel piè di pagina." }
+          - label: "Video di apertura"
+            name: video_apertura
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Video MP4", name: mp4, widget: file, hint: "Breve, senza audio, verticale (4:5), meno di 3 MB." }
+              - { label: "Video WebM (facoltativo)", name: webm, widget: file, required: false, hint: "Se carichi un nuovo MP4, svuota questo campo." }
+              - { label: "Immagine di anteprima", name: anteprima, widget: image, hint: "Il primo fotogramma del video, in JPG." }
+              - { label: "Descrizione (italiano)", name: descrizione_it, widget: string }
+              - { label: "Descrizione (inglese)", name: descrizione_en, widget: string }
+          - label: "Chi sono — foto 1"
+            name: foto_chi_sono_1
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Immagine", name: immagine, widget: image, hint: "Verticale, circa 900 × 1200 px." }
+              - { label: "Descrizione per Google e accessibilità (italiano)", name: descrizione_it, widget: string }
+              - { label: "Descrizione per Google e accessibilità (inglese)", name: descrizione_en, widget: string }
+          - label: "Chi sono — foto 2"
+            name: foto_chi_sono_2
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Immagine", name: immagine, widget: image, hint: "Verticale, circa 900 × 1200 px." }
+              - { label: "Descrizione per Google e accessibilità (italiano)", name: descrizione_it, widget: string }
+              - { label: "Descrizione per Google e accessibilità (inglese)", name: descrizione_en, widget: string }
+          - label: "Galleria"
+            name: galleria
+            widget: list
+            label_singular: "foto"
+            summary: "{{fields.descrizione_it}}"
+            hint: "Meglio 4 foto quadrate (circa 900 × 900 px). Trascina per cambiare l'ordine."
+            fields:
+              - { label: "Immagine", name: immagine, widget: image }
+              - { label: "Descrizione (italiano)", name: descrizione_it, widget: string }
+              - { label: "Descrizione (inglese)", name: descrizione_en, widget: string }
+          - label: "Contatti — foto"
+            name: foto_contatti
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Immagine", name: immagine, widget: image, hint: "Verticale, circa 700 × 1050 px." }
+              - { label: "Descrizione per Google e accessibilità (italiano)", name: descrizione_it, widget: string }
+              - { label: "Descrizione per Google e accessibilità (inglese)", name: descrizione_en, widget: string }
+
+      # ------------------------------------------------------------------
+      - name: it
+        label: "Testi in italiano"
+        file: content/it.json
+        format: json
+        fields: &testi
+          - label: "Google e social"
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Titolo (massimo 60 caratteri)", name: titolo, widget: string }
+              - { label: "Descrizione (massimo 155 caratteri)", name: descrizione, widget: text }
+          - label: "Menu in alto"
+            name: intestazione
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Sottotitolo sotto il nome", name: sottotitolo_nome, widget: string }
+              - { label: "Voce: Chi sono", name: menu_chi_sono, widget: string }
+              - { label: "Voce: Corsi", name: menu_corsi, widget: string }
+              - { label: "Voce: Metodo", name: menu_metodo, widget: string }
+              - { label: "Voce: Prima volta", name: menu_prima_volta, widget: string }
+              - { label: "Pulsante: Contatti", name: menu_contatti, widget: string }
+          - label: "Apertura"
+            name: apertura
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Sopratitolo", name: sopratitolo, widget: string }
+              - { label: "Titolo", name: titolo, widget: text, hint: "Metti tra asterischi la parola da evidenziare in corsivo, es. *chi siamo*." }
+              - { label: "Testo", name: testo, widget: text }
+              - { label: "Pulsante principale", name: pulsante_principale, widget: string }
+              - { label: "Pulsante secondario", name: pulsante_secondario, widget: string }
+              - { label: "Bollino: titolo", name: bollino_titolo, widget: string }
+              - { label: "Bollino: testo", name: bollino_testo, widget: string }
+          - label: "Fascia credenziali"
+            name: credenziali
+            widget: list
+            label_singular: "credenziale"
+            summary: "{{fields.titolo}}"
+            collapsed: true
+            fields:
+              - { label: "Titolo", name: titolo, widget: string }
+              - { label: "Testo", name: testo, widget: string }
+          - label: "Chi sono"
+            name: chi_sono
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Sopratitolo", name: sopratitolo, widget: string }
+              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
+              - { label: "Paragrafi", name: paragrafi, widget: list, field: { label: "Paragrafo", name: paragrafo, widget: text } }
+              - { label: "Citazione", name: citazione, widget: text, required: false, hint: "Senza virgolette. Se vuota, non compare." }
+          - label: "Corsi"
+            name: corsi
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Sopratitolo", name: sopratitolo, widget: string }
+              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
+              - { label: "Nota a destra", name: nota, widget: text }
+              - label: "Elenco corsi"
+                name: elenco
+                widget: list
+                label_singular: "corso"
+                summary: "{{fields.nome}}"
+                hint: "La numerazione 01, 02, 03… è automatica."
+                fields:
+                  - { label: "Nome", name: nome, widget: string }
+                  - { label: "Per chi (età o livello)", name: per_chi, widget: string }
+                  - { label: "Descrizione", name: descrizione, widget: text }
+          - label: "Metodo RAD"
+            name: metodo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Sopratitolo", name: sopratitolo, widget: string }
+              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
+              - { label: "Paragrafi", name: paragrafi, widget: list, field: { label: "Paragrafo", name: paragrafo, widget: text } }
+              - label: "Livelli"
+                name: livelli
+                widget: list
+                label_singular: "livello"
+                summary: "{{fields.etichetta}}"
+                fields:
+                  - { label: "Etichetta (in corsivo)", name: etichetta, widget: string }
+                  - { label: "Programma", name: programma, widget: string }
+                  - { label: "Descrizione", name: descrizione, widget: string }
+          - label: "Prima volta? (domande frequenti)"
+            name: prima_volta
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Sopratitolo", name: sopratitolo, widget: string }
+              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
+              - { label: "Testo", name: testo, widget: text }
+              - { label: "Pulsante", name: pulsante, widget: string }
+              - label: "Domande"
+                name: domande
+                widget: list
+                label_singular: "domanda"
+                summary: "{{fields.domanda}}"
+                hint: "Le risposte complete (senza parentesi quadre) vengono mostrate anche a Google e alle AI."
+                fields:
+                  - { label: "Domanda", name: domanda, widget: string }
+                  - { label: "Risposta", name: risposta, widget: text }
+          - label: "Testimonianze"
+            name: testimonianze
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Sopratitolo", name: sopratitolo, widget: string }
+              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
+              - label: "Elenco"
+                name: elenco
+                widget: list
+                required: false
+                label_singular: "testimonianza"
+                summary: "{{fields.autore}}"
+                hint: "Se l'elenco è vuoto, la sezione non compare."
+                fields:
+                  - { label: "Testo (senza virgolette)", name: testo, widget: text }
+                  - { label: "Autore", name: autore, widget: string }
+          - label: "Contatti"
+            name: contatti
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Sopratitolo", name: sopratitolo, widget: string }
+              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
+              - { label: "Testo", name: testo, widget: text }
+              - { label: "Etichetta campo nome", name: campo_nome, widget: string }
+              - { label: "Etichetta campo email", name: campo_email, widget: string }
+              - { label: "Etichetta campo corso", name: campo_corso, widget: string }
+              - { label: "Corsi nel menu a tendina", name: opzioni_corso, widget: list, field: { label: "Corso", name: corso, widget: string } }
+              - { label: "Etichetta campo messaggio", name: campo_messaggio, widget: string }
+              - { label: "Testo consenso privacy", name: consenso_privacy, widget: text }
+              - { label: "Pulsante di invio", name: pulsante_invio, widget: string }
+          - label: "Piè di pagina"
+            name: pie_di_pagina
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Qualifica", name: qualifica, widget: string }
+              - { label: "Etichetta crediti foto", name: etichetta_crediti, widget: string }
+              - { label: "Etichetta partita IVA", name: etichetta_iva, widget: string }
+              - { label: "Link privacy", name: link_privacy, widget: string }
+              - { label: "Link cookie", name: link_cookie, widget: string }
+
+      # ------------------------------------------------------------------
+      - name: en
+        label: "Testi in inglese"
+        file: content/en.json
+        format: json
+        fields: *testi

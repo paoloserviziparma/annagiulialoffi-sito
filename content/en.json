@@ -1,0 +1,105 @@
+{
+  "seo": {
+    "titolo": "Annagiulia Loffi | RAD ballet & contemporary dance teacher",
+    "descrizione": "Annagiulia Loffi teaches classical ballet with the Royal Academy of Dance (RAD) syllabus and contemporary dance to children, teens and adults. Get in touch."
+  },
+  "intestazione": {
+    "sottotitolo_nome": "Classical ballet & contemporary",
+    "menu_chi_sono": "About",
+    "menu_corsi": "Classes",
+    "menu_metodo": "RAD method",
+    "menu_prima_volta": "New here?",
+    "menu_contatti": "Contact"
+  },
+  "apertura": {
+    "sopratitolo": "Studying at the Royal Academy of Dance · London",
+    "titolo": "Dance is the most beautiful way I know to say *who we are* without words.",
+    "testo": "Classical ballet and contemporary dance classes for children, teens and adults, following the official Royal Academy of Dance (RAD) syllabus: the classical ballet method studied in over 80 countries.",
+    "pulsante_principale": "Write to me",
+    "pulsante_secondario": "Explore classes",
+    "bollino_titolo": "RAD",
+    "bollino_testo": "Graduating 2027"
+  },
+  "credenziali": [
+    { "titolo": "Degree in progress", "testo": "Royal Academy of Dance, London · [Programme title], completing September 2027" },
+    { "titolo": "RAD qualified", "testo": "Qualified to teach the RAD syllabus" },
+    { "titolo": "Official exams", "testo": "Preparation for RAD exams with international examiners" },
+    { "titolo": "Two languages", "testo": "Classical ballet and contemporary dance" }
+  ],
+  "chi_sono": {
+    "sopratitolo": "About me",
+    "titolo": "From London, with a passion for *sharing* dance.",
+    "paragrafi": [
+      "I'm Annagiulia Loffi and I have been dancing since I was a child in Parma. I'm currently studying at the Royal Academy of Dance in London, one of the world's leading institutions for training dance teachers, and will graduate in September 2027. I already hold RAD teaching certifications.",
+      "Alongside classical technique I practise contemporary dance: two languages that enrich each other. In my classes the precision of the method goes hand in hand with musicality, expression and the simple joy of moving, at any age."
+    ],
+    "citazione": "[A sentence of yours about dance and teaching.]"
+  },
+  "corsi": {
+    "sopratitolo": "Classes",
+    "titolo": "Classical ballet and contemporary dance classes for every age.",
+    "nota": "Small classes, so every student gets real attention.",
+    "elenco": [
+      { "nome": "Pre-ballet", "per_chi": "Ages [4] to [6]", "descrizione": "A first encounter with dance: music, coordination and imagination, through the RAD programmes for young children." },
+      { "nome": "RAD classical ballet", "per_chi": "Children and teens", "descrizione": "Classical technique following the official syllabus, from the Graded to the Vocational levels, with the option of taking RAD exams." },
+      { "nome": "Contemporary dance", "per_chi": "Teens and adults", "descrizione": "Floor work, weight, breath and improvisation: a free language for exploring movement and creativity." },
+      { "nome": "Adults and private lessons", "per_chi": "All levels", "descrizione": "Classes for returners and complete beginners, plus one-to-one lessons to prepare for exams, auditions or solos." }
+    ]
+  },
+  "metodo": {
+    "sopratitolo": "The RAD method",
+    "titolo": "The RAD method, an *international* standard, step by step.",
+    "paragrafi": [
+      "Founded in London in 1920, the Royal Academy of Dance is one of the world's largest dance education organisations. Its syllabus guides students through a clear progression, built to develop technique, musicality and confidence safely and gradually.",
+      "Exams are optional, assessed by RAD examiners, and certify progress with an internationally recognised award."
+    ],
+    "livelli": [
+      { "etichetta": "First steps", "programma": "Pre-Primary · Primary", "descrizione": "Movement basics, rhythm and posture" },
+      { "etichetta": "Graded", "programma": "Grade 1 – Grade 8", "descrizione": "Classical technique, free movement and character dance" },
+      { "etichetta": "Vocational", "programma": "Intermediate Foundation → Advanced 2", "descrizione": "For those who want to go further or dance professionally" },
+      { "etichetta": "And more", "programma": "Contemporary", "descrizione": "A second language to complete the training" }
+    ]
+  },
+  "prima_volta": {
+    "sopratitolo": "New here?",
+    "titolo": "Start *here*.",
+    "testo": "The questions parents and new students ask me most often. Can't find yours? Just write to me.",
+    "pulsante": "Ask a question",
+    "domande": [
+      { "domanda": "What age can you start?", "risposta": "Pre-ballet starts from age [4]; RAD Graded classes usually begin around [6–7]. There is no upper limit: there are classes for adult beginners too." },
+      { "domanda": "What do I need for the first class?", "risposta": "Comfortable, close-fitting clothes (a leotard, or a T-shirt and leggings), socks or ballet slippers if you have them, and hair tied back. I'll advise on uniform after your first class." },
+      { "domanda": "What is the RAD method?", "risposta": "It is the classical ballet syllabus of the Royal Academy of Dance, founded in London in 1920, which trains teachers and runs exams worldwide. It progresses level by level, from first steps for young children to professional levels, building technique, musicality and expression gradually and safely." },
+      { "domanda": "Are RAD exams compulsory?", "risposta": "No, they are optional. Students who wish to can prepare during the year: exams are assessed by a Royal Academy of Dance examiner and lead to an internationally recognised award." },
+      { "domanda": "Ballet or contemporary: which to choose?", "risposta": "For younger students I recommend starting with ballet, which builds the technical foundation, then adding contemporary to develop freedom and expression. Adults can start with either." },
+      { "domanda": "How much do classes cost?", "risposta": "Group classes from [€ ...] per month, private lessons from [€ ...] per hour. Discounts for [siblings / annual enrolment]." }
+    ]
+  },
+  "testimonianze": {
+    "sopratitolo": "Kind words",
+    "titolo": "What *students and families* say.",
+    "elenco": [
+      { "testo": "[A parent's testimonial: two or three lines about their child's experience.]", "autore": "[Name], parent of [Name], age [x]" },
+      { "testo": "[A testimonial from an adult student.]", "autore": "[Name], adult class" },
+      { "testo": "[A reference from London: a tutor or colleague at the Royal Academy of Dance.]", "autore": "[Name], [role]" }
+    ]
+  },
+  "contatti": {
+    "sopratitolo": "Contact",
+    "titolo": "*Write to me*.",
+    "testo": "Tell me a little about yourself: your age (or your child's) and whether you have studied dance before. I'll reply to recommend the right class.",
+    "campo_nome": "Full name",
+    "campo_email": "Email",
+    "campo_corso": "Class of interest",
+    "opzioni_corso": ["Pre-ballet", "RAD classical ballet", "Contemporary dance", "Adults", "Private lessons"],
+    "campo_messaggio": "Message",
+    "consenso_privacy": "I have read the privacy notice and consent to the processing of my data.",
+    "pulsante_invio": "Send request"
+  },
+  "pie_di_pagina": {
+    "qualifica": "RAD-certified dance teacher",
+    "etichetta_crediti": "Photo and video",
+    "etichetta_iva": "VAT",
+    "link_privacy": "Privacy",
+    "link_cookie": "Cookies"
+  }
+}

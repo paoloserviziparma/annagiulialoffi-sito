@@ -1,0 +1,51 @@
+{
+  "nome": "Annagiulia Loffi",
+  "email": "anna@annagiulialoffi.com",
+  "instagram": "",
+  "partita_iva": "[numero]",
+  "crediti_foto": "[Nome fotografo]",
+  "video_apertura": {
+    "mp4": "/img/hero.mp4",
+    "webm": "/img/hero.webm",
+    "anteprima": "/img/hero-poster.jpg",
+    "descrizione_it": "Silhouette di una ballerina che danza in una sala luminosa",
+    "descrizione_en": "Silhouette of a ballet dancer moving in a bright studio"
+  },
+  "foto_chi_sono_1": {
+    "immagine": "/img/ritratto.jpg",
+    "descrizione_it": "Ritratto di Annagiulia Loffi",
+    "descrizione_en": "Portrait of Annagiulia Loffi"
+  },
+  "foto_chi_sono_2": {
+    "immagine": "/img/londra-palette.jpg",
+    "descrizione_it": "Annagiulia sul Westminster Bridge a Londra, con il London Eye illuminato sullo sfondo",
+    "descrizione_en": "Annagiulia on Westminster Bridge in London, with the London Eye lit up behind her"
+  },
+  "galleria": [
+    {
+      "immagine": "/img/lezione-palette.jpg",
+      "descrizione_it": "Annagiulia in arabesque sulle punte",
+      "descrizione_en": "Annagiulia in arabesque on pointe"
+    },
+    {
+      "immagine": "/img/sbarra-palette.jpg",
+      "descrizione_it": "Piccole allieve della propedeutica in fila in sala, con body e gonnellini",
+      "descrizione_en": "Young pre-ballet students lined up in the studio in leotards and skirts"
+    },
+    {
+      "immagine": "/img/contemporaneo-palette.jpg",
+      "descrizione_it": "Allieve in sala durante un esercizio di salti, foto in bianco e nero",
+      "descrizione_en": "Students in the studio during a jumps exercise, black and white photo"
+    },
+    {
+      "immagine": "/img/punte-palette.jpg",
+      "descrizione_it": "Allieve in fila sulle mezze punte, in primo piano una scarpetta con i nastri incrociati",
+      "descrizione_en": "Students in a line on demi-pointe, a ballet slipper with crossed ribbons in the foreground"
+    }
+  ],
+  "foto_contatti": {
+    "immagine": "/img/contatti.jpg",
+    "descrizione_it": "Annagiulia Loffi sulle punte, con le braccia intrecciate sopra la testa",
+    "descrizione_en": "Annagiulia Loffi on pointe, arms folded above her head"
+  }
+}
