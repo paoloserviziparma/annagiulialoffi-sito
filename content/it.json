@@ -18,17 +18,15 @@
   "intestazione": {
     "sottotitolo_nome": "Danza classica & contemporanea",
     "menu_chi_sono": "Chi sono",
-    "menu_metodo": "Metodo RAD",
     "menu_contatti": "Contatti"
   },
   "chi_sono": {
     "sopratitolo": "Chi sono",
-    "titolo": "Da Londra, con la passione di *trasmettere* la danza.",
+    "titolo": "",
     "paragrafi": [
-      "Mi chiamo Annagiulia Loffi e ho studiato danza fin da bambina a Parma. Oggi frequento il corso di laurea in Ballet Education alla Royal Academy of Dance di Londra, una delle istituzioni più autorevoli al mondo per la formazione nella danza classica, dove mi laureerò a settembre 2027.",
-      "Accanto alla tecnica classica coltivo la danza contemporanea: due linguaggi che si arricchiscono a vicenda, tra precisione, musicalità, espressività e il piacere di muoversi."
+      "Mi chiamo Annagiulia Loffi e ho studiato danza fin da bambina a Parma. Oggi frequento il corso di laurea in Ballet Education alla Royal Academy of Dance di Londra, una delle istituzioni più autorevoli al mondo per la formazione nella danza classica, dove mi laureerò a settembre 2027."
     ],
-    "citazione": "[Una tua frase sulla danza.]"
+    "citazione": ""
   },
   "credenziali": [
     {
@@ -62,36 +60,6 @@
   "seo": {
     "titolo": "Annagiulia Loffi | Danza classica e contemporanea",
     "descrizione": "Annagiulia Loffi, danza classica e contemporanea. Laureanda in Ballet Education alla Royal Academy of Dance di Londra, laurea prevista a settembre 2027."
-  },
-  "metodo": {
-    "sopratitolo": "Il metodo RAD",
-    "titolo": "Il metodo RAD, uno standard *internazionale* passo dopo passo.",
-    "paragrafi": [
-      "La Royal Academy of Dance, fondata a Londra nel 1920, è una delle più grandi organizzazioni al mondo per l'insegnamento della danza. Il suo programma accompagna allieve e allievi con una progressione chiara, costruita per far crescere tecnica, musicalità e sicurezza in modo sano e graduale.",
-      "Gli esami, facoltativi, sono valutati da esaminatori RAD e certificano i progressi con un attestato riconosciuto in tutto il mondo."
-    ],
-    "livelli": [
-      {
-        "etichetta": "Primi passi",
-        "programma": "Pre-Primary · Primary",
-        "descrizione": "Basi del movimento, ritmo e postura"
-      },
-      {
-        "etichetta": "Graded",
-        "programma": "Grade 1 – Grade 8",
-        "descrizione": "Tecnica classica, danze libere e di carattere"
-      },
-      {
-        "etichetta": "Vocational",
-        "programma": "Intermediate Foundation → Advanced 2",
-        "descrizione": "Per chi desidera approfondire o fare della danza una professione"
-      },
-      {
-        "etichetta": "E in più",
-        "programma": "Contemporaneo",
-        "descrizione": "Un secondo linguaggio per completare la formazione"
-      }
-    ]
   },
   "titolo_credenziali": "Formazione accademica"
 }

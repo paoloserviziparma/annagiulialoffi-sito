@@ -56,14 +56,15 @@ collections:
               - { label: "Immagine", name: immagine, widget: image, hint: "Verticale, circa 900 × 1200 px." }
               - { label: "Descrizione per Google e accessibilità (italiano)", name: descrizione_it, widget: string }
               - { label: "Descrizione per Google e accessibilità (inglese)", name: descrizione_en, widget: string }
-          - label: "Chi sono — foto 2"
+          - label: "Chi sono — foto 2 (facoltativa)"
             name: foto_chi_sono_2
             widget: object
+            required: false
             collapsed: true
             fields:
-              - { label: "Immagine", name: immagine, widget: image, hint: "Verticale, circa 900 × 1200 px." }
-              - { label: "Descrizione per Google e accessibilità (italiano)", name: descrizione_it, widget: string }
-              - { label: "Descrizione per Google e accessibilità (inglese)", name: descrizione_en, widget: string }
+              - { label: "Immagine", name: immagine, widget: image, required: false, hint: "Facoltativa: se c'è, compare accanto alla foto 1." }
+              - { label: "Descrizione per Google e accessibilità (italiano)", name: descrizione_it, widget: string, required: false }
+              - { label: "Descrizione per Google e accessibilità (inglese)", name: descrizione_en, widget: string, required: false }
           - label: "Galleria"
             name: galleria
             widget: list
@@ -103,7 +104,6 @@ collections:
             fields:
               - { label: "Sottotitolo sotto il nome", name: sottotitolo_nome, widget: string }
               - { label: "Voce: Chi sono", name: menu_chi_sono, widget: string }
-              - { label: "Voce: Metodo", name: menu_metodo, widget: string }
               - { label: "Pulsante: Contatti", name: menu_contatti, widget: string }
           - label: "Apertura"
             name: apertura
@@ -133,26 +133,9 @@ collections:
             collapsed: true
             fields:
               - { label: "Sopratitolo", name: sopratitolo, widget: string }
-              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
+              - { label: "Titolo", name: titolo, widget: string, required: false, hint: "Facoltativo. *parola* = corsivo." }
               - { label: "Paragrafi", name: paragrafi, widget: list, field: { label: "Paragrafo", name: paragrafo, widget: text } }
               - { label: "Citazione", name: citazione, widget: text, required: false, hint: "Senza virgolette. Se vuota, non compare." }
-          - label: "Metodo RAD"
-            name: metodo
-            widget: object
-            collapsed: true
-            fields:
-              - { label: "Sopratitolo", name: sopratitolo, widget: string }
-              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
-              - { label: "Paragrafi", name: paragrafi, widget: list, field: { label: "Paragrafo", name: paragrafo, widget: text } }
-              - label: "Livelli"
-                name: livelli
-                widget: list
-                label_singular: "livello"
-                summary: "{{fields.etichetta}}"
-                fields:
-                  - { label: "Etichetta (in corsivo)", name: etichetta, widget: string }
-                  - { label: "Programma", name: programma, widget: string }
-                  - { label: "Descrizione", name: descrizione, widget: string }
           - label: "Contatti"
             name: contatti
             widget: object

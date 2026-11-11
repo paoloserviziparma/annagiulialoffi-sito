@@ -6,7 +6,6 @@
   "intestazione": {
     "sottotitolo_nome": "Classical ballet & contemporary",
     "menu_chi_sono": "About",
-    "menu_metodo": "RAD method",
     "menu_contatti": "Contact"
   },
   "apertura": {
@@ -38,42 +37,11 @@
   ],
   "chi_sono": {
     "sopratitolo": "About me",
-    "titolo": "From London, with a passion for *sharing* dance.",
+    "titolo": "",
     "paragrafi": [
-      "I'm Annagiulia Loffi and I have been dancing since I was a child in Parma. I'm currently studying for a BA in Ballet Education at the Royal Academy of Dance in London, one of the world's leading institutions in classical ballet training, and will graduate in September 2027.",
-      "Alongside classical technique I practise contemporary dance: two languages that enrich each other, combining precision, musicality, expression and the simple joy of moving."
+      "I'm Annagiulia Loffi and I have been dancing since I was a child in Parma. I'm currently studying for a BA in Ballet Education at the Royal Academy of Dance in London, one of the world's leading institutions in classical ballet training, and will graduate in September 2027."
     ],
-    "citazione": "[A sentence of yours about dance.]"
-  },
-  "metodo": {
-    "sopratitolo": "The RAD method",
-    "titolo": "The RAD method, an *international* standard, step by step.",
-    "paragrafi": [
-      "Founded in London in 1920, the Royal Academy of Dance is one of the world's largest dance education organisations. Its syllabus guides students through a clear progression, built to develop technique, musicality and confidence safely and gradually.",
-      "Exams are optional, assessed by RAD examiners, and certify progress with an internationally recognised award."
-    ],
-    "livelli": [
-      {
-        "etichetta": "First steps",
-        "programma": "Pre-Primary · Primary",
-        "descrizione": "Movement basics, rhythm and posture"
-      },
-      {
-        "etichetta": "Graded",
-        "programma": "Grade 1 – Grade 8",
-        "descrizione": "Classical technique, free movement and character dance"
-      },
-      {
-        "etichetta": "Vocational",
-        "programma": "Intermediate Foundation → Advanced 2",
-        "descrizione": "For those who want to go further or dance professionally"
-      },
-      {
-        "etichetta": "And more",
-        "programma": "Contemporary",
-        "descrizione": "A second language to complete the training"
-      }
-    ]
+    "citazione": ""
   },
   "contatti": {
     "sopratitolo": "Contact",

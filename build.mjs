@@ -118,14 +118,14 @@ ${list(t.credenziali).map((x) => `<div style="display: flex; flex-direction: col
 </section>
 
 <!-- CHI SONO -->
-<section id="${id.about}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start">
-<div style="flex: 1 1 340px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<section id="${id.about}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+${(() => { const n = [S.foto_chi_sono_1, S.foto_chi_sono_2].filter((o) => o && o.immagine).length; return n > 1 ? `<div style="flex: 1 1 340px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">` : `<div style="flex: 0 1 380px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px">`; })()}
 ${img(S.foto_chi_sono_1, lang, "display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px")}
 ${img(S.foto_chi_sono_2, lang, "display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; margin-top: 56px; border-radius: 6px")}
 </div>
 <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
 <p style="${EYEBROW}">${esc(t.chi_sono.sopratitolo)}</p>
-<h2 style="${H2}">${em(t.chi_sono.titolo)}</h2>
+${t.chi_sono.titolo ? `<h2 style="${H2}">${em(t.chi_sono.titolo)}</h2>` : ""}
 ${list(t.chi_sono.paragrafi).map((p) => `<p style="${BODY}">${esc(p)}</p>`).join("\n")}
 ${t.chi_sono.citazione ? `<blockquote style="margin: 8px 0 0; padding: 0; ${SERIF}; font-style: italic; font-size: 26px; line-height: 1.35; color: #1E1B22">“${esc(t.chi_sono.citazione)}”</blockquote>` : ""}
 </div>
@@ -153,7 +153,7 @@ ${list(t.corsi.elenco).map((x, i) => `<article style="background: #F6F2EE; borde
 </section>` : ""}
 
 <!-- METODO RAD -->
-<section id="${id.method}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px">
+${t.metodo ? `<section id="${id.method}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
 <p style="${EYEBROW}">${esc(t.metodo.sopratitolo)}</p>
 <h2 style="${H2}">${em(t.metodo.titolo)}</h2>
@@ -165,7 +165,7 @@ ${list(t.metodo.livelli).map((x, i, a) => `<div style="display: flex; gap: 24px;
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 500">${esc(x.programma)}</span><span style="font-size: 15px; color: #5E5763">${esc(x.descrizione)}</span></div>
 </div>`).join("\n")}
 </div>
-</section>
+</section>` : ""}
 
 <!-- GALLERIA -->
 <section aria-label="${c.aria.gallery}" style="max-width: 1200px; margin: 0 auto; padding: 0 32px 120px">
@@ -359,9 +359,9 @@ writeFileSync(new URL("llms.txt", OUT), `# ${S.nome} — ${plain(it.intestazione
 ${it.titolo_credenziali ? `## ${plain(it.titolo_credenziali)}
 ${list(it.credenziali).filter((x) => !hasPlaceholder(x.titolo + x.testo)).map((x) => `- **${x.titolo}**: ${x.testo}`).join("\n")}
 ` : ""}
-## ${plain(it.metodo.sopratitolo)}
+${it.metodo ? `## ${plain(it.metodo.sopratitolo)}
 ${list(it.metodo.paragrafi).join("\n\n")}
-${it.corsi ? `
+` : ""}${it.corsi ? `
 ## ${plain(it.corsi.sopratitolo)}
 ${list(it.corsi.elenco).map((x) => `- **${x.nome}** (${x.per_chi}): ${x.descrizione}`).filter((l) => !hasPlaceholder(l)).join("\n")}
 ` : ""}${it.prima_volta ? `
