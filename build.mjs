@@ -1,6 +1,7 @@
 // Genera il sito statico in dist/ a partire da content/*.json e static/.
 // Nessuna dipendenza esterna: basta Node 18+.  Uso: node build.mjs
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } from "node:fs";
+import { LEGAL, UPDATED } from "./legal.mjs";
 
 const BASE = "https://annagiulialoffi.com";
 const ACCENT = "#9E4F63";
@@ -241,7 +242,7 @@ ${list(t.contatti.opzioni_corso).map((o) => `<option>${esc(o)}</option>`).join("
 <label for="${f.p}msg" style="font-size: 14px; color: #4A4450">${esc(t.contatti.campo_messaggio)}</label>
 <textarea id="${f.p}msg" name="${f.f.msg}" rows="4" style="font: inherit; padding: 13px 14px; border: 1px solid #CFC3BF; border-radius: 6px; background: #F6F2EE; color: #1E1B22; resize: vertical"></textarea>
 </div>
-<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #4A4450"><input type="checkbox" name="privacy" value="${f.privacy}" required style="margin-top: 5px; width: 18px; height: 18px">${esc(t.contatti.consenso_privacy)}</label>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #4A4450"><input type="checkbox" name="privacy" value="${f.privacy}" required style="margin-top: 5px; width: 18px; height: 18px"><span>${esc(t.contatti.consenso_privacy).replace(/(informativa privacy|privacy notice)/i, `<a href="/${LEGAL[lang].privacy.file}" target="_blank" rel="noopener">$1</a>`)}</span></label>
 <button type="submit" style="align-self: flex-start; font: inherit; font-size: 16px; background: ${ACCENT}; color: #F6F2EE; border: 0; padding: 16px 32px; border-radius: 999px; cursor: pointer">${esc(t.contatti.pulsante_invio)}</button>
 </form>
 </section>
@@ -253,7 +254,7 @@ ${list(t.contatti.opzioni_corso).map((o) => `<option>${esc(o)}</option>`).join("
 <footer style="border-top: 1px solid #E3DAD6">
 <div style="max-width: 1200px; margin: 0 auto; padding: 40px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: 14px; color: #5E5763">
 <span style="display: flex; align-items: center; gap: 14px">${monogram(40, 6, false, 5)}<span><span style="${SERIF}; font-size: 20px; color: #1E1B22">${esc(S.nome)}</span> · ${esc(t.pie_di_pagina.qualifica)}</span></span>
-<span>${S.crediti_foto ? `${esc(t.pie_di_pagina.etichetta_crediti)}: ${esc(S.crediti_foto)} · ` : ""}${S.partita_iva ? `${esc(t.pie_di_pagina.etichetta_iva)} ${esc(S.partita_iva)} · ` : ""}<a href="#">${esc(t.pie_di_pagina.link_privacy)}</a> · <a href="#">${esc(t.pie_di_pagina.link_cookie)}</a></span>
+<span>${S.crediti_foto ? `${esc(t.pie_di_pagina.etichetta_crediti)}: ${esc(S.crediti_foto)} · ` : ""}${S.partita_iva ? `${esc(t.pie_di_pagina.etichetta_iva)} ${esc(S.partita_iva)} · ` : ""}<a href="/${LEGAL[lang].privacy.file}">${esc(t.pie_di_pagina.link_privacy)}</a> · <a href="/${LEGAL[lang].cookie.file}">${esc(t.pie_di_pagina.link_cookie)}</a></span>
 </div>
 </footer>
 
@@ -330,12 +331,68 @@ ${body}
 `;
 }
 
+// ---------- pagine Privacy e Cookie ----------
+function legalPage(lang, kind) {
+  const c = L[lang], P = LEGAL[lang][kind], t = T[lang];
+  const back = lang === "it" ? "Torna al sito" : "Back to the website";
+  const upd = lang === "it" ? "Ultimo aggiornamento" : "Last updated";
+  const other = LEGAL[lang === "it" ? "en" : "it"][kind];
+  return `<!doctype html>
+<html lang="${lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(P.title)} — ${esc(S.nome)}</title>
+<meta name="robots" content="noindex, follow">
+<link rel="alternate" hreflang="${lang === "it" ? "en" : "it"}" href="${BASE}/${other.file}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+<style>
+.legal h2{margin:44px 0 12px;${SERIF};font-weight:500;font-size:28px;line-height:1.2;color:#1E1B22}
+.legal p,.legal li{color:#4A4450}
+.legal p{margin:0 0 14px}
+.legal ul{margin:0 0 14px;padding-left:22px}
+.legal li{margin-bottom:6px}
+.legal table{width:100%;min-width:520px;border-collapse:collapse;margin:8px 0 18px;font-size:15px}
+.legal th,.legal td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-top:1px solid #D9CECA}
+.legal th{font-weight:500;color:#1E1B22;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.legal code{font-size:14px;background:#EFE8E3;padding:2px 6px;border-radius:4px}
+</style>
+</head>
+<body>
+<div style="font-family: 'Jost', 'Helvetica Neue', sans-serif; color: #1E1B22; background: #F6F2EE; font-size: 17px; line-height: 1.65; min-height: 100vh">
+<header style="border-bottom: 1px solid #E3DAD6">
+<div style="max-width: 1200px; margin: 0 auto; padding: 22px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="${c.path}" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #1E1B22">${monogram(48, 5, true, 4)}<span style="${SERIF}; font-size: 22px; font-weight: 500">${esc(S.nome)}</span></a>
+<a href="${c.path}" style="color: #1E1B22; text-decoration: none; border: 1px solid #1E1B22; padding: 10px 20px; border-radius: 999px; font-size: 15px">← ${back}</a>
+</div>
+</header>
+<main class="legal" style="max-width: 760px; margin: 0 auto; padding: 72px 32px 96px">
+<h1 style="margin: 0 0 8px; ${SERIF}; font-weight: 400; font-size: clamp(42px, 6vw, 64px); line-height: 1.05">${esc(P.title)}</h1>
+<p style="margin: 0 0 36px; font-size: 14px; letter-spacing: 0.08em; color: #5E5763">${upd}: ${UPDATED[lang]}</p>
+${P.body(esc(S.email))}
+</main>
+<footer style="border-top: 1px solid #E3DAD6">
+<div style="max-width: 1200px; margin: 0 auto; padding: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #5E5763">
+<span><span style="${SERIF}; font-size: 20px; color: #1E1B22">${esc(S.nome)}</span> · ${esc(t.pie_di_pagina.qualifica)}</span>
+<span><a href="/${LEGAL[lang].privacy.file}">${esc(t.pie_di_pagina.link_privacy)}</a> · <a href="/${LEGAL[lang].cookie.file}">${esc(t.pie_di_pagina.link_cookie)}</a></span>
+</div>
+</footer>
+</div>
+</body>
+</html>
+`;
+}
+
 // ---------- build ----------
 const OUT = new URL("./dist/", import.meta.url);
 if (existsSync(OUT)) rmSync(OUT, { recursive: true });
 cpSync(new URL("./static/", import.meta.url), OUT, { recursive: true });
 mkdirSync(new URL("./en/", OUT), { recursive: true });
-for (const lang of ["it", "en"]) writeFileSync(new URL(L[lang].file, OUT), page(lang));
+for (const lang of ["it", "en"]) {
+  writeFileSync(new URL(L[lang].file, OUT), page(lang));
+  for (const kind of ["privacy", "cookie"]) writeFileSync(new URL(LEGAL[lang][kind].file, OUT), legalPage(lang, kind));
+}
 
 const sm = (loc) => `  <url>
     <loc>${loc}</loc>
