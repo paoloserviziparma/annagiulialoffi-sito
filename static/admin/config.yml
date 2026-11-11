@@ -103,9 +103,7 @@ collections:
             fields:
               - { label: "Sottotitolo sotto il nome", name: sottotitolo_nome, widget: string }
               - { label: "Voce: Chi sono", name: menu_chi_sono, widget: string }
-              - { label: "Voce: Corsi", name: menu_corsi, widget: string }
               - { label: "Voce: Metodo", name: menu_metodo, widget: string }
-              - { label: "Voce: Prima volta", name: menu_prima_volta, widget: string }
               - { label: "Pulsante: Contatti", name: menu_contatti, widget: string }
           - label: "Apertura"
             name: apertura
@@ -113,16 +111,17 @@ collections:
             collapsed: true
             fields:
               - { label: "Sopratitolo", name: sopratitolo, widget: string }
-              - { label: "Titolo", name: titolo, widget: text, hint: "Metti tra asterischi la parola da evidenziare in corsivo, es. *chi siamo*." }
+              - { label: "Titolo grande", name: titolo, widget: string, hint: "Ora è nome e cognome. Tra asterischi una parola diventa corsivo malva, es. Annagiulia *Loffi*." }
               - { label: "Testo", name: testo, widget: text }
               - { label: "Pulsante principale", name: pulsante_principale, widget: string }
               - { label: "Pulsante secondario", name: pulsante_secondario, widget: string }
               - { label: "Bollino: titolo", name: bollino_titolo, widget: string }
               - { label: "Bollino: testo", name: bollino_testo, widget: string }
-          - label: "Fascia credenziali"
+          - { label: "Fascia nera: titolo", name: titolo_credenziali, widget: string, required: false, hint: "Es. Formazione accademica." }
+          - label: "Fascia nera: qualifiche"
             name: credenziali
             widget: list
-            label_singular: "credenziale"
+            label_singular: "qualifica"
             summary: "{{fields.titolo}}"
             collapsed: true
             fields:
@@ -137,24 +136,6 @@ collections:
               - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
               - { label: "Paragrafi", name: paragrafi, widget: list, field: { label: "Paragrafo", name: paragrafo, widget: text } }
               - { label: "Citazione", name: citazione, widget: text, required: false, hint: "Senza virgolette. Se vuota, non compare." }
-          - label: "Corsi"
-            name: corsi
-            widget: object
-            collapsed: true
-            fields:
-              - { label: "Sopratitolo", name: sopratitolo, widget: string }
-              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
-              - { label: "Nota a destra", name: nota, widget: text }
-              - label: "Elenco corsi"
-                name: elenco
-                widget: list
-                label_singular: "corso"
-                summary: "{{fields.nome}}"
-                hint: "La numerazione 01, 02, 03… è automatica."
-                fields:
-                  - { label: "Nome", name: nome, widget: string }
-                  - { label: "Per chi (età o livello)", name: per_chi, widget: string }
-                  - { label: "Descrizione", name: descrizione, widget: text }
           - label: "Metodo RAD"
             name: metodo
             widget: object
@@ -172,41 +153,6 @@ collections:
                   - { label: "Etichetta (in corsivo)", name: etichetta, widget: string }
                   - { label: "Programma", name: programma, widget: string }
                   - { label: "Descrizione", name: descrizione, widget: string }
-          - label: "Prima volta? (domande frequenti)"
-            name: prima_volta
-            widget: object
-            collapsed: true
-            fields:
-              - { label: "Sopratitolo", name: sopratitolo, widget: string }
-              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
-              - { label: "Testo", name: testo, widget: text }
-              - { label: "Pulsante", name: pulsante, widget: string }
-              - label: "Domande"
-                name: domande
-                widget: list
-                label_singular: "domanda"
-                summary: "{{fields.domanda}}"
-                hint: "Le risposte complete (senza parentesi quadre) vengono mostrate anche a Google e alle AI."
-                fields:
-                  - { label: "Domanda", name: domanda, widget: string }
-                  - { label: "Risposta", name: risposta, widget: text }
-          - label: "Testimonianze"
-            name: testimonianze
-            widget: object
-            collapsed: true
-            fields:
-              - { label: "Sopratitolo", name: sopratitolo, widget: string }
-              - { label: "Titolo", name: titolo, widget: string, hint: "*parola* = corsivo." }
-              - label: "Elenco"
-                name: elenco
-                widget: list
-                required: false
-                label_singular: "testimonianza"
-                summary: "{{fields.autore}}"
-                hint: "Se l'elenco è vuoto, la sezione non compare."
-                fields:
-                  - { label: "Testo (senza virgolette)", name: testo, widget: text }
-                  - { label: "Autore", name: autore, widget: string }
           - label: "Contatti"
             name: contatti
             widget: object
@@ -217,8 +163,8 @@ collections:
               - { label: "Testo", name: testo, widget: text }
               - { label: "Etichetta campo nome", name: campo_nome, widget: string }
               - { label: "Etichetta campo email", name: campo_email, widget: string }
-              - { label: "Etichetta campo corso", name: campo_corso, widget: string }
-              - { label: "Corsi nel menu a tendina", name: opzioni_corso, widget: list, field: { label: "Corso", name: corso, widget: string } }
+              - { label: "Voci del menu a tendina (facoltativo)", name: opzioni_corso, widget: list, required: false, field: { label: "Voce", name: voce, widget: string }, hint: "Se vuoto, il menu a tendina non compare nel modulo." }
+              - { label: "Etichetta menu a tendina", name: campo_corso, widget: string, required: false }
               - { label: "Etichetta campo messaggio", name: campo_messaggio, widget: string }
               - { label: "Testo consenso privacy", name: consenso_privacy, widget: text }
               - { label: "Pulsante di invio", name: pulsante_invio, widget: string }
