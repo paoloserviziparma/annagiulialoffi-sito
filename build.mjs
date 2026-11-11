@@ -26,10 +26,10 @@ const L = {
     aria: { nav: "Menu principale", cred: "Formazione e certificazioni", gallery: "Galleria", testi: "Testimonianze", top: "Torna all'inizio della pagina", topTitle: "Torna su" },
     form: { name: "contatti", action: "/grazie.html", p: "f-", f: { name: "nome", email: "email", course: "corso", msg: "messaggio" }, privacy: "accettata", honey: "Non compilare questo campo:" },
     person: {
-      job: "Insegnante di danza classica e contemporanea",
-      knows: ["Danza classica", "Danza contemporanea", "Metodo Royal Academy of Dance (RAD)", "Propedeutica alla danza", "Preparazione agli esami RAD"],
+      job: "Danzatrice, laureanda in Ballet Education alla Royal Academy of Dance",
+      knows: ["Danza classica", "Danza contemporanea", "Metodo Royal Academy of Dance (RAD)", "Ballet Education"],
       study: "Studentessa alla Royal Academy of Dance di Londra, laurea prevista a settembre 2027",
-      ogAlt: "Annagiulia Loffi, insegnante di danza classica e contemporanea",
+      ogAlt: "Annagiulia Loffi, danza classica e contemporanea",
     },
   },
   en: {
@@ -39,10 +39,10 @@ const L = {
     aria: { nav: "Main menu", cred: "Training and qualifications", gallery: "Gallery", testi: "Testimonials", top: "Back to the top of the page", topTitle: "Back to top" },
     form: { name: "contact", action: "/en/thanks.html", p: "e-", f: { name: "name", email: "email", course: "class", msg: "message" }, privacy: "accepted", honey: "Do not fill this in:" },
     person: {
-      job: "Classical ballet and contemporary dance teacher",
-      knows: ["Classical ballet", "Contemporary dance", "Royal Academy of Dance (RAD) syllabus", "Pre-ballet for young children", "RAD exam preparation"],
+      job: "Dancer, Ballet Education student at the Royal Academy of Dance",
+      knows: ["Classical ballet", "Contemporary dance", "Royal Academy of Dance (RAD) syllabus", "Ballet Education"],
       study: "Student at the Royal Academy of Dance, London, graduating September 2027",
-      ogAlt: "Annagiulia Loffi, classical ballet and contemporary dance teacher",
+      ogAlt: "Annagiulia Loffi, classical ballet and contemporary dance",
     },
   },
 };
@@ -76,6 +76,7 @@ ${monogram(54, 5, true, 4)}
 <button type="button" class="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><svg class="ic-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="ic-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
 <nav id="mainnav" class="mainnav" aria-label="${c.aria.nav}" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 15px">
 ${[["about", "menu_chi_sono"], ["courses", "menu_corsi"], ["method", "menu_metodo"], ["start", "menu_prima_volta"]]
+  .filter(([, label]) => t.intestazione[label])
   .map(([k, label]) => `<a class="navlink" href="#${id[k]}" style="color: #1E1B22; text-decoration: none; padding: 10px 0">${esc(t.intestazione[label])}</a>`).join("\n")}
 <a href="#${id.contact}" style="color: #F6F2EE; background: ${ACCENT}; text-decoration: none; padding: 12px 22px; border-radius: 999px">${esc(t.intestazione.menu_contatti)}</a>
 <a href="${c.other.href}" lang="${c.other.lang}" aria-label="${c.other.aria}" style="color: #1E1B22; text-decoration: none; border: 1px solid #CFC3BF; border-radius: 999px; padding: 10px 14px; font-size: 13px; letter-spacing: 0.12em">${c.other.html}</a>
@@ -87,11 +88,11 @@ ${[["about", "menu_chi_sono"], ["courses", "menu_corsi"], ["method", "menu_metod
 <section id="top" style="max-width: 1200px; margin: 0 auto; padding: 88px 32px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
 <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
 <p style="${EYEBROW}">${esc(t.apertura.sopratitolo)}</p>
-<h1 style="margin: 0; ${SERIF}; font-weight: 400; font-size: clamp(42px, 5.2vw, 74px); line-height: 1.02; letter-spacing: -0.01em; max-width: 13ch; text-wrap: balance">${em(t.apertura.titolo, `color: ${ACCENT}`)}</h1>
+<h1 style="margin: 0; ${SERIF}; font-weight: 400; font-size: clamp(60px, 8.4vw, 120px); line-height: 0.95; letter-spacing: -0.015em; text-wrap: balance">${em(t.apertura.titolo, `color: ${ACCENT}`)}</h1>
 <p style="margin: 0; max-width: 520px; font-size: 19px; color: #4A4450; font-weight: 300">${esc(t.apertura.testo)}</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px; padding-top: 8px">
 <a href="#${id.contact}" style="background: #1E1B22; color: #F6F2EE; text-decoration: none; padding: 16px 30px; border-radius: 999px; font-size: 16px">${esc(t.apertura.pulsante_principale)}</a>
-<a href="#${id.courses}" style="border: 1px solid #1E1B22; color: #1E1B22; text-decoration: none; padding: 15px 30px; border-radius: 999px; font-size: 16px">${esc(t.apertura.pulsante_secondario)}</a>
+<a href="#${id.about}" style="border: 1px solid #1E1B22; color: #1E1B22; text-decoration: none; padding: 15px 30px; border-radius: 999px; font-size: 16px">${esc(t.apertura.pulsante_secondario)}</a>
 </div>
 </div>
 <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
@@ -108,6 +109,7 @@ ${[["about", "menu_chi_sono"], ["courses", "menu_corsi"], ["method", "menu_metod
 <!-- CREDENZIALI -->
 <section aria-label="${c.aria.cred}" style="background: #221E26; color: #F6F2EE">
 <div style="max-width: 1200px; margin: 0 auto; padding: 44px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+${t.titolo_credenziali ? `<h2 style="grid-column: 1 / -1; margin: 0; font-size: 13px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: #E2B3BF">${esc(t.titolo_credenziali)}</h2>` : ""}
 ${list(t.credenziali).map((x) => `<div style="display: flex; flex-direction: column; gap: 6px">
 <span style="${SERIF}; font-size: 26px; font-style: italic">${esc(x.titolo)}</span>
 <span style="font-size: 15px; color: #CFC6D1">${esc(x.testo)}</span>
@@ -116,21 +118,21 @@ ${list(t.credenziali).map((x) => `<div style="display: flex; flex-direction: col
 </section>
 
 <!-- CHI SONO -->
-<section id="${id.about}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start">
-<div style="flex: 1 1 340px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<section id="${id.about}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+${(() => { const n = [S.foto_chi_sono_1, S.foto_chi_sono_2].filter((o) => o && o.immagine).length; return n > 1 ? `<div style="flex: 1 1 340px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">` : `<div style="flex: 0 1 380px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px">`; })()}
 ${img(S.foto_chi_sono_1, lang, "display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px")}
 ${img(S.foto_chi_sono_2, lang, "display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; margin-top: 56px; border-radius: 6px")}
 </div>
 <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
 <p style="${EYEBROW}">${esc(t.chi_sono.sopratitolo)}</p>
-<h2 style="${H2}">${em(t.chi_sono.titolo)}</h2>
+${t.chi_sono.titolo ? `<h2 style="${H2}">${em(t.chi_sono.titolo)}</h2>` : ""}
 ${list(t.chi_sono.paragrafi).map((p) => `<p style="${BODY}">${esc(p)}</p>`).join("\n")}
 ${t.chi_sono.citazione ? `<blockquote style="margin: 8px 0 0; padding: 0; ${SERIF}; font-style: italic; font-size: 26px; line-height: 1.35; color: #1E1B22">“${esc(t.chi_sono.citazione)}”</blockquote>` : ""}
 </div>
 </section>
 
 <!-- CORSI -->
-<section id="${id.courses}" style="background: #EFE8E3">
+${t.corsi ? `<section id="${id.courses}" style="background: #EFE8E3">
 <div style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
 <div style="display: flex; flex-direction: column; gap: 16px; max-width: 640px">
@@ -148,10 +150,10 @@ ${list(t.corsi.elenco).map((x, i) => `<article style="background: #F6F2EE; borde
 </article>`).join("\n")}
 </div>
 </div>
-</section>
+</section>` : ""}
 
 <!-- METODO RAD -->
-<section id="${id.method}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px">
+${t.metodo ? `<section id="${id.method}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
 <p style="${EYEBROW}">${esc(t.metodo.sopratitolo)}</p>
 <h2 style="${H2}">${em(t.metodo.titolo)}</h2>
@@ -163,7 +165,7 @@ ${list(t.metodo.livelli).map((x, i, a) => `<div style="display: flex; gap: 24px;
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 500">${esc(x.programma)}</span><span style="font-size: 15px; color: #5E5763">${esc(x.descrizione)}</span></div>
 </div>`).join("\n")}
 </div>
-</section>
+</section>` : ""}
 
 <!-- GALLERIA -->
 <section aria-label="${c.aria.gallery}" style="max-width: 1200px; margin: 0 auto; padding: 0 32px 120px">
@@ -173,7 +175,7 @@ ${list(S.galleria).map((g) => img(g, lang, "display: block; width: 100%; aspect-
 </section>
 
 <!-- PRIMA VOLTA -->
-<section id="${id.start}" style="background: #EFE8E3">
+${t.prima_volta ? `<section id="${id.start}" style="background: #EFE8E3">
 <div style="max-width: 1200px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px">
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 22px">
 <p style="${EYEBROW}">${esc(t.prima_volta.sopratitolo)}</p>
@@ -188,10 +190,10 @@ ${faqs.map((q, i) => `<details${i === 0 ? ' open=""' : ""} style="border-top: 1p
 </details>`).join("\n")}
 </div>
 </div>
-</section>
+</section>` : ""}
 
 <!-- TESTIMONIANZE -->
-${list(t.testimonianze.elenco).length ? `<section aria-label="${c.aria.testi}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px 0; display: flex; flex-direction: column; gap: 48px">
+${list(t.testimonianze?.elenco).length ? `<section aria-label="${c.aria.testi}" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px 0; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-direction: column; gap: 16px; max-width: 640px">
 <p style="${EYEBROW}">${esc(t.testimonianze.sopratitolo)}</p>
 <h2 style="${H2}">${em(t.testimonianze.titolo)}</h2>
@@ -229,12 +231,12 @@ ${img(S.foto_contatti, lang, "display: block; width: 100%; max-width: 300px; asp
 <input id="${f.p}email" name="${f.f.email}" required type="email" autocomplete="email" style="font: inherit; padding: 13px 14px; border: 1px solid #CFC3BF; border-radius: 6px; background: #F6F2EE; color: #1E1B22">
 </div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 8px">
+${list(t.contatti.opzioni_corso).length ? `<div style="display: flex; flex-direction: column; gap: 8px">
 <label for="${f.p}course" style="font-size: 14px; color: #4A4450">${esc(t.contatti.campo_corso)}</label>
 <select id="${f.p}course" name="${f.f.course}" style="font: inherit; padding: 13px 14px; border: 1px solid #CFC3BF; border-radius: 6px; background: #F6F2EE; color: #1E1B22">
 ${list(t.contatti.opzioni_corso).map((o) => `<option>${esc(o)}</option>`).join("\n")}
 </select>
-</div>
+</div>` : ""}
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="${f.p}msg" style="font-size: 14px; color: #4A4450">${esc(t.contatti.campo_messaggio)}</label>
 <textarea id="${f.p}msg" name="${f.f.msg}" rows="4" style="font: inherit; padding: 13px 14px; border: 1px solid #CFC3BF; border-radius: 6px; background: #F6F2EE; color: #1E1B22; resize: vertical"></textarea>
@@ -270,7 +272,7 @@ ${list(t.contatti.opzioni_corso).map((o) => `<option>${esc(o)}</option>`).join("
       affiliation: { "@type": "CollegeOrUniversity", name: "Royal Academy of Dance", url: "https://www.royalacademyofdance.org/" },
       knowsAbout: c.person.knows, knowsLanguage: ["it", "en"],
       ...(ig ? { sameAs: ["https://instagram.com/" + ig] } : {}),
-      makesOffer: list(t.corsi.elenco).map((x) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: x.nome, description: x.descrizione, provider: { "@id": personId } } })),
+      ...(t.corsi ? { makesOffer: list(t.corsi.elenco).map((x) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: x.nome, description: x.descrizione, provider: { "@id": personId } } })) } : {}),
     },
   ];
   if (faqLd.length) graph.push({ "@type": "FAQPage", "@id": url + "#faq", inLanguage: lang, mainEntity: faqLd });
@@ -354,12 +356,18 @@ writeFileSync(new URL("llms.txt", OUT), `# ${S.nome} — ${plain(it.intestazione
 
 > ${plain(it.apertura.testo)} ${list(it.chi_sono.paragrafi).join(" ")}
 
+${it.titolo_credenziali ? `## ${plain(it.titolo_credenziali)}
+${list(it.credenziali).filter((x) => !hasPlaceholder(x.titolo + x.testo)).map((x) => `- **${x.titolo}**: ${x.testo}`).join("\n")}
+` : ""}
+${it.metodo ? `## ${plain(it.metodo.sopratitolo)}
+${list(it.metodo.paragrafi).join("\n\n")}
+` : ""}${it.corsi ? `
 ## ${plain(it.corsi.sopratitolo)}
 ${list(it.corsi.elenco).map((x) => `- **${x.nome}** (${x.per_chi}): ${x.descrizione}`).filter((l) => !hasPlaceholder(l)).join("\n")}
-
+` : ""}${it.prima_volta ? `
 ## ${plain(it.prima_volta.sopratitolo)}
 ${list(it.prima_volta.domande).filter((q) => !hasPlaceholder(q.risposta)).map((q) => `- **${q.domanda}** ${q.risposta}`).join("\n")}
-
+` : ""}
 ## Contatti
 ${S.email ? `- Email: ${S.email}\n` : ""}- Modulo contatti: ${BASE}/#${L.it.ids.contact}
 
